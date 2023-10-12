@@ -19,6 +19,10 @@ $ acorn run -n laravel .
 ```
 $ acorn dev -n laravel .
 ```
+- Laravel acorn image is pushed to ghcr you can directly run it using below command
+```
+$ acorn run  ghcr.io/infracloudio/laravel-acorn:v0.0.2
+```
 As this Application just include the simple Hello world Application which can be easily customized based on your requirement . You can follow Laravel docs.
 
 - [Getting Started](https://laravel.com/docs/10.x/installation)
