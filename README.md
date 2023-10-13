@@ -1,29 +1,22 @@
 ## Laravel Acornfile
 
-##### TL: DR 
-> Note : add the .env file inside the src dir . You can copy  .env.example and modify based on your requirement.
-```
-$ acorn run -n laravel .
-```
+Hi, we have developed a simple `TODO App` using Laravel framework and we have the AcornFile which can be used to deploy it on Acron SaaS Platform.
 
-Hi, we have developed a simple `TODO App` using Laravel framework and we have the AcornFile which can be used to deploy the Application on Kubernetes.
+##### Deploying the App on SaaS Platform.
+- First you need to login to saas platform using your github username.Once the Account is setup you need to click on create and select `from acorn image` where you need to select `name`, `region` and `Acron Image`. For Laravel below is the latest image
+```
+ghcr.io/infracloudio/laravel-acorn:v0.0.2
+```
+Once you click on `Create` Provisioning starts and in some time you app is in Running state and you can access it using the given URL.
 
-###### Steps:
+##### Checking App logs
+- You can click on 4 dots on the right side of your app on the UI and click on View Logs through which you can see you app Logs.
 
-- If you want to just deploy the application with defaults use below command
-```
-$ acorn run -n laravel .
-```
+##### Removing the App
+- If you simply want to remove the App . Click on the 4 dots and click `Remove` which will remove your app.
 
-- If you are developing your application an you don’t what to restart the pods everytime you make the changes you can simply use the acorn dev command which will run the Laravel Application in dev mode and all the changes will the reflected to the UI as soon as you save the file. 
-```
-$ acorn dev -n laravel .
-```
-- Laravel acorn image is pushed to ghcr you can directly run it using below command
-```
-$ acorn run  ghcr.io/infracloudio/laravel-acorn:v0.0.2
-```
-As this Application just include the simple Hello world Application which can be easily customized based on your requirement . You can follow Laravel docs.
+---
+As this Application just include the simple `TODO app` Application which can be easily customized based on your requirement . You can follow Laravel docs.
 
 - [Getting Started](https://laravel.com/docs/10.x/installation)
 
