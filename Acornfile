@@ -1,33 +1,33 @@
 services: db: image: "ghcr.io/acorn-io/mariadb:v1.0.0"
 
 containers: {
-	app: {
-		build: {
-			context:    "./src"
-			dockerfile: "./src/Dockerfile"
-		}
-		dirs: "/var/www": "./src"
-		ports: "9000"
-		env: {
-			DB_HOST:      "@{service.db.address}"
-			DB_PORT:      "@{service.db.port.3306}"
-			DB_DATABASE:  "@{service.db.data.dbName}"
-			DB_USERNAME:  "@{service.db.secrets.admin.username}"
-			DB_PASSWORD:  "@{service.db.secrets.admin.password}"
-			SERVICE_TAGS: "dev"
-			SERVICE_NAME: "mysql"
-		}
-		if args.dev {
-			env: APP_DEBUG:   "true"
-			dirs: "/var/www": "./src"
-		}
-	}
-	nginx: {
-		image: "nginx:alpine"
-		ports: publish: "8000:80/http"
-		dirs: {
-			"/var/www":          "./src"
-			"/etc/nginx/conf.d": "./docker-compose/nginx"
-		}
-	}
+  app: {
+    build: {
+		  context:    "./src"
+      dockerfile: "./src/Dockerfile"
+    }
+    dirs: "/var/www": "./src"
+    ports: "9000"
+    env: {
+      DB_HOST:      "@{service.db.address}"
+      DB_PORT:      "@{service.db.port.3306}"
+      DB_DATABASE:  "@{service.db.data.dbName}"
+      DB_USERNAME:  "@{service.db.secrets.admin.username}"
+      DB_PASSWORD:  "@{service.db.secrets.admin.password}"  
+      SERVICE_TAGS: "dev"
+      SERVICE_NAME: "mysql"
+    }
+    if args.dev {
+      env: APP_DEBUG:   "true"
+      dirs: "/var/www": "./src"
+    }
+  }
+  nginx: {
+    image: "nginx:alpine"
+    ports: publish: "8000:80/http"
+    dirs: {
+      "/var/www":          "./src"
+      "/etc/nginx/conf.d": "./docker-compose/nginx"
+      }
+  }
 }
