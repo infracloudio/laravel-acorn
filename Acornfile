@@ -2,7 +2,7 @@ name:        "Laravel Sample Acorn"
 description: "Acorn running a sample Laravel app"
 readme:      "./README.md"
 
-services: db: image: "ghcr.io/acorn-io/mariadb:v1.0.0"
+services: db: image: "ghcr.io/acorn-io/mariadb:v10.11.5-1"
 
 containers: {
   app: {
