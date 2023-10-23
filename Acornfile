@@ -31,7 +31,7 @@ containers: {
     ports: publish: "8000:80/http"
     dirs: {
       "/var/www":          "./src"
-      "/etc/nginx/conf.d": "./docker-compose/nginx"
+      "/etc/nginx/conf.d": "./conf/nginx"
       }
   }
 }
