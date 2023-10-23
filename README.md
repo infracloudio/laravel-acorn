@@ -13,7 +13,7 @@ You can deploy the sample web app on the Acorn SaaS Platform with following simp
   * Select "From Acorn Image" to deploy the sample Application
   * Provide a name such as `Laravel Sample Acorn` and keeping Project's default Region, type in the below Acorn image and choose Create 
     ```bash
-    ghcr.io/infracloudio/laravel-acorn:v0.0.2
+    ghcr.io/infracloudio/laravel-acorn:v10.0.0-0
     ```
 4. Now the sample App is provisioned on Acorn SaaS Platform and is available for 2hrs. Upgrade to pro account to keep it running longer.
 5. Once the Acorn is running, you can access it by clicking the Endpoint or the redirect link.
