@@ -14,7 +14,7 @@
 <div class="text-center mt-5">
     <h2>Add Todo</h2>
 
-    <form class="row g-3 justify-content-center" method="POST" action="{{route('todos.store')}}">
+    <form class="row g-3 justify-content-center" method="POST" action="/store">
         @csrf
         <div class="col-6">
             <input type="text" class="form-control" name="title" placeholder="Title">
@@ -56,8 +56,8 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{route('todos.edit',['todo'=>$todo->id])}}" class="btn btn-info">Edit</a>
-                            <a href="{{route('todos.destroy',['todo'=>$todo->id])}}" class="btn btn-danger">Delete</a>
+                            <a href="{{route('edit',['id'=>$todo->id])}}" class="btn btn-info">Edit</a>
+                            <a href="{{route('destroy',['id'=>$todo->id])}}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
 

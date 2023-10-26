@@ -39,7 +39,7 @@ class TodoController extends Controller
 
         if ($validator->fails())
         {
-            return redirect()->route('todos.index')->withErrors($validator);
+            return redirect()->route('index')->withErrors($validator);
         }
 
         
@@ -47,7 +47,7 @@ class TodoController extends Controller
             'title'=>$request->get('title')
         ]);
 
-               return redirect()->route('todos.index')->with('success', 'Inserted');
+               return redirect()->route('index')->with('success', 'Inserted');
 
     }
 
@@ -81,7 +81,7 @@ class TodoController extends Controller
 
         if ($validator->fails())
         {
-            return redirect()->route('todos.edit',['todo'=>$id])->withErrors($validator);
+            return redirect()->route('edit',['todo'=>$id])->withErrors($validator);
         }
 
 
@@ -91,7 +91,7 @@ class TodoController extends Controller
         $todo->is_completed=$request->get('is_completed');
         $todo->save();
 
-        return redirect()->route('todos.index')->with('success', 'Updated Todo');
+        return redirect()->route('index')->with('success', 'Updated Todo');
     }
 
     /**
@@ -101,6 +101,6 @@ class TodoController extends Controller
     {
         //
         Todo::where('id',$id)->delete();
-        return redirect()->route('todos.index')->with('success', 'Deleted Todo');
+        return redirect()->route('index')->with('success', 'Deleted Todo');
     }
 }

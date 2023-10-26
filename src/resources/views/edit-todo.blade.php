@@ -15,7 +15,7 @@
     <h2>Edit Todo</h2>
 </div>
 
-<form  method="POST" action="{{route('todos.update',['todo'=>$todo->id])}}">
+<form  method="POST" action="{{route('update',['id'=>$todo->id])}}">
 
     @csrf
 

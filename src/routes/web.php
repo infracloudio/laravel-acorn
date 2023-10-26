@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 
-Route::resource('todos', \App\Http\Controllers\TodoController::class);
-Route::get('todos/{todo}', [\App\Http\Controllers\TodoController::class,'destroy'])->name('todos.destroy');
+// Route::resource('/', \App\Http\Controllers\TodoController::class);
+// Route::get('todos/{todo}', [\App\Http\Controllers\TodoController::class,'destroy'])->name('todos.destroy');
+
+Route::get('/', [TodoController::class, 'index'])->name('index');
+Route::get('/create', [TodoController::class, 'create']);
+Route::post('/store', [TodoController::class, 'store'])->name('store');
+Route::get('/edit/{id}', [TodoController::class, 'edit'])->name('edit');
+Route::put('/update/{id}', [TodoController::class, 'update'])->name('update');
+Route::get('/destroy/{id}', [TodoController::class, 'destroy'])->name('destroy');
