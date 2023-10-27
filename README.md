@@ -8,4 +8,4 @@ This is an Acorn for the sample Laravel TODO app following [this](https://impuls
 ## Configure the Laravel App
 
 
-Laravel uses mariadb as the database and it is been used as the services . If you are using Advanace Options on Acorn Platform you can provide the `laraveldbname`. By default it will be named as `laraveldb`.
+Laravel uses mariadb as the database and it is been used as the [services](https://docs.acorn.io/reference/acornfile#services-consuming) . If you are using Advanace Options on Acorn Platform you can provide the `laraveldbname`. By default it will be named as `laraveldb`.
