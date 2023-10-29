@@ -1,6 +1,7 @@
 name:        "Laravel Sample Acorn"
 description: "Acorn running a sample Laravel app"
 readme:      "./README.md"
+icon:        "./laravel.svg"
 
 args: {
   laraveldbname: "laraveldb"
