@@ -1,9 +1,18 @@
 name:        "Laravel Sample Acorn"
 description: "Acorn running a sample Laravel app"
 readme:      "./README.md"
+icon:        "./laravel.svg"
 
-services: db: image: "ghcr.io/acorn-io/mariadb:v10.11.5-1"
+args: {
+  laraveldbname: "laraveldb"
+}
 
+services: db: {
+  image: "ghcr.io/acorn-io/mariadb:v10.11.5-1"
+    serviceArgs: {
+      dbName: args.laraveldbname
+  }
+}
 containers: {
   app: {
     build: {
